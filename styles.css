@@ -262,7 +262,7 @@
 }
 
 #mfa {
-    background: black url("mfa.PNG");
+    background: black url("mfa.PNG") no-repeat fixed center;
     background-size: cover;
 }
 #info_mfa {
