@@ -131,7 +131,6 @@ const rules = [
     { id: 'prime-requirement', text: 'Must have a prime number.', check: (value) => containsPrime(value) },
     { id: 'dayOfWeek-requirement', text: 'Must have a day of the week.', check: (value) => containsDayOfWeek(value) },
     { id: 'EvenNumSequence-requirement', text: 'Must have a sequence of 3 consecutive even numbers.', check: (value) => containsConsecutiveEvenDigits(value) },
-    { id: 'palindrome-requirement', text: 'Must have a palindrome of at least 3 characters.', check: (value) => containsPalindrome(value) },
     { id: 'greekCharacter-requirement', text: 'Must have a Greek character.', check: (value) => containsGreekCharacter(value) },
 ];
 

@@ -32,7 +32,7 @@
     <img src="info.png" id="info_mfa">
     <img src="phone.svg" id="phone_mfa">
     <div id="yes">Yes</div>
-    <div id="no" onclick="handleClick('no')">No</div>
+    <div id="no">No</div>
     <div id="mfa_inquire">
         <img src="mail.svg" id="mail">
         <textarea id="email" placeholder="Enter your email here..."></textarea>
@@ -43,14 +43,14 @@
     </div>
     <p id="confirmMessage">A hint has been sent to your email!</p>
     <div id="code-container">
-        <input type="text" maxlength="1" class="code-input" id="code1">
-        <input type="text" maxlength="1" class="code-input" id="code2">
-        <input type="text" maxlength="1" class="code-input" id="code3">
-        <input type="text" maxlength="1" class="code-input" id="code4">
-        <div id="submitCode" onclick="checkCode()">
-            <img src="button.svg" id="codeButton">
-            <p id="codeText">Verify</p>
-        </div>
+      <input type="text" maxlength="1" class="code-input" id="code1">
+      <input type="text" maxlength="1" class="code-input" id="code2">
+      <input type="text" maxlength="1" class="code-input" id="code3">
+      <input type="text" maxlength="1" class="code-input" id="code4">
+      <div id="submitCode" onclick="checkCode()">
+          <img src="button.svg" id="codeButton">
+          <p id="codeText">Verify</p>
+      </div>
     </div>
     <p id="wrong_code">Wrong code try again</p>
 </body>

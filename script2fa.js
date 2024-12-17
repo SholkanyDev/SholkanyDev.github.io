@@ -49,8 +49,8 @@ fleeDiv.addEventListener("mouseover", () => {
 resetDiv.addEventListener("click", () => {
   // Reset fleeing div to original position
   flee = false
-  fleeDiv.style.left = `450px`;
-  fleeDiv.style.top = `455px`;
+  fleeDiv.style.left = `29.3vw`;
+  fleeDiv.style.top = `55vh`;
   fleeDiv.style.border = "0px solid gray"
   fleeDiv.style.backgroundColor = "gray"
   fleeDiv.style.cursor = "none"
