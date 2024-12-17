@@ -240,8 +240,8 @@
 
 #task_complete {
     position: absolute;
-    top: 18%;
-    left: 33%;
+    top: 18vh;
+    left: 33vw;
 }
 
 #next_button {
