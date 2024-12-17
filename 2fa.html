@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA (Multi Factor authentication)</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        emailjs.init("VFsuRzgGRRKDWmTHd"); // Replace with your EmailJS user ID
+        function sendEmailJS(message, mail) {
+          emailjs.send("service_ph9u33h", "template_z1dzyug", {
+            to_name: "User",
+            to_email: mail,
+            from_name: "Shadow Pass",
+            message: message,
+          }).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            (error) => {
+              console.error("FAILED...", error);
+            }
+          );
+        }
+    </script>
+    <script src="script2fa.js" defer></script>
+</head>
+<body id="mfa">
+    <img src="info.png" id="info_mfa">
+    <img src="phone.svg" id="phone_mfa">
+    <div id="yes">Yes</div>
+    <div id="no" onclick="handleClick('no')">No</div>
+    <div id="mfa_inquire">
+        <img src="mail.svg" id="mail">
+        <textarea id="email" placeholder="Enter your answer here..."></textarea>
+        <div id="submitMail" onclick="sendEmail()">
+            <img src="button.svg" id="submitButton">
+            <p id="submitText">Send</p>
+        </div>
+    </div>
+    <p id="confirmMessage">A hint has been sent to your email!</p>
+    <div id="code-container">
+        <input type="text" maxlength="1" class="code-input" id="code1">
+        <input type="text" maxlength="1" class="code-input" id="code2">
+        <input type="text" maxlength="1" class="code-input" id="code3">
+        <input type="text" maxlength="1" class="code-input" id="code4">
+        <div id="submitCode" onclick="checkCode()">
+            <img src="button.svg" id="codeButton">
+            <p id="codeText">Varify</p>
+        </div>
+    </div>
+    <p id="wrong_code">Wrong code try again</p>
+</body>
+</html>

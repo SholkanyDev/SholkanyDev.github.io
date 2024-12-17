@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css?family=Anton");
+@import url("https://fonts.googleapis.com/css?family=Blinker");
+
+
+#game {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    height: 100vh;
+    background: black url("gameBackground.svg") no-repeat fixed center;
+}
+
+#main {
+    margin: 0;
+    background:black url("background.svg") no-repeat fixed center;
+    background-size: cover;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    top: 20%; /* Adjust vertical position */
+}
+
+#custom-text-area {
+    width: 600px;
+    height: 50px;
+    padding: 10px;
+    font-size: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+#requirements {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    gap: 10px;
+    position: relative;
+    top: 20%; /* Adjust vertical position */
+}
+
+.requirement {
+    width: 500px; /* Adjust as needed */
+    height: 110px; /* Adjust as needed */
+    margin: 10px auto;
+    padding: 10px;
+    background-size: cover; /* Ensure the entire image fits */
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    text-align: center;
+    font-size: 16px;
+    border: 10px black;
+    background-color: black; /* Default gray background */
+    background-image: url("gray_box.svg"); /* Default gray box image */
+    color: black; /* Default text color */
+    border-left: 2px black;
+    border-right: 2px black;
+    border-top: 2px black;
+    border-bottom: 2px black;
+}
+.requirement-text {
+    display: inline-block;
+    margin-top: 20px; /* Adjust as needed to push the text down */
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: black; /* Default text color */
+}
+.requirement.valid {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.banner {
+    width: 100%;            /* Full width of the page */
+    height: 70px;           /* Adjust height as needed */
+    background-color: black; /* Black background color */
+    position: fixed;        /* Keeps the banner fixed at the top */
+    top: 0;                 /* Aligns it to the top of the page */
+    z-index: 1000;          /* Ensures it stays above other elements */
+}
+
+.title-text {
+    margin-top: 140px;
+    margin-left: 110px;
+    font-size: 150px;        /* Adjust font size as needed */
+    color: white;           /* Ensure the text is visible against the background */
+    text-align: left;
+    font-family: Anton;
+    text-shadow: 11px 10px 0px #26454b;
+}
+
+#hacker-image {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+#medal-image {
+    position: absolute;
+    left: 100px;
+    top: 5px;
+}
+
+#gold-image {
+    position: absolute;
+    left: 350px;
+    top: 5px;
+}
+
+#bmo-image {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.header-text {
+    font-size: 20px;
+    color: yellow;
+    font: Blinker bold;
+}
+
+.value-text {
+    font-size: 18px;
+    color: white;
+    font: Blinker bold;
+}
+
+#achievements-block {
+    position: absolute;
+    top: -7px;
+    left: 160px;
+}
+
+#achievements-value {
+    position: absolute;
+    top: 30px;
+}
+
+#gold-block {
+    position: absolute;
+    top: -7px;
+    left: 410px;
+}
+
+#gold-value {
+    position: absolute;
+    top: 30px;
+}
+
+.container {
+    border-radius: 5px;
+}
+.postion-container{
+    position: absolute;
+    top: 600px;
+    left: 110px;
+}
+.text {
+  font-size: 30px;
+  color: white; /* Initial state: white text */
+  background-color: black; /* Initial state: black background */
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+  overflow: hidden; /* Hide the sliding background */
+  border-radius: 10px; /* Round corners of the text box */
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  z-index: 1; /* Make sure the text stays above the background */
+}
+
+.text::after {
+  content: ''; /* Empty content to create the sliding effect */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Initially off-screen to the left */
+  width: 100%;
+  height: 100%;
+  background-color: white; /* White background */
+  transition: left 0.5s ease-in-out; /* Slide from left to right */
+  z-index: -1; /* Place the sliding background behind the text */
+}
+
+.text:hover::after {
+  left: 0; /* Slide the white background to cover the text */
+}
+
+.text:hover {
+  color: black; /* Change to black text on hover */
+  background-color: transparent; /* Keep the text background transparent on hover */
+}
+#arrow {
+    position: absolute;
+    top: -5px;
+    left: -35px;
+    font-size: 50px;
+    visibility: hidden;
+    color: white;
+    font: bold;
+}
+.hover-container:hover + #arrow {
+    visibility: visible;   
+}
+.paywall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above all other elements */
+}
+
+.paywall.hidden {
+    display: none; /* Initially hidden */
+}
+
+.paywall-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#mascot {
+    position: absolute;
+    top: 65%;
+    left: 40px;
+}
+
+#task_complete {
+    position: absolute;
+    top: 20%;
+    left: 34%;
+}
+
+#next_button {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    font-size: 40px;
+    background-color: #febe29;
+    box-shadow: 0px 5px black;
+    text-align: center;
+    color: black;
+    border-radius: 5px;
+}
+
+#mfa {
+    background: black url("mfa.PNG");
+    background-size: cover;
+}
+#info_mfa {
+    position: absolute;
+    left: 50px;
+    width: 700px;
+    height: 560px;
+}
+#phone_mfa {
+    position: absolute;
+    top: 475px;
+    left: 0px;
+    width: 226.8px;
+    height: 303.1px;
+}
+#yes {
+    position: absolute;
+    top:460px;
+    left:150px;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: #62c559;
+    font-size: 50px;
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+}
+#no {
+    position: absolute;
+    top:455px;
+    left:450px;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    border: 5px solid red;
+    font-size: 50px;
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+    background-color: white;
+}
+#mfa_inquire {
+    display: none;
+}
+#mail {
+    position: absolute;
+    top: 180px;
+    right: 630px;
+    width: 70px;
+    height: 70px;
+}
+#email {
+    position: absolute;
+    top: 260px;
+    right: 169px;
+    background-color: gray;
+    border: 5px solid black;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    resize: none;
+}
+#submitMail{
+    position: absolute;
+    top: 390px;
+    left: 950px;
+    font-size: 40px;
+}
+#submitButton{
+    width: 288.75px;
+    height: 63.75px;
+}
+#submitText{
+    position: absolute;
+    top: -35px;
+    left: 100px;
+    user-select: none;
+}
+#confirmMessage {
+    position: absolute;
+    top: 300px;
+    right: 210px;
+    color: white;
+    font-size: 30px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    display: none;
+}
+#code-container {
+    position: absolute;
+    left: 900px;
+    top: 500px;
+    display: none;
+}
+.code-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 5px;
+}
+#code1 {
+    position: relative;
+    left: 0px;
+}
+#code2 {
+    position: relative;
+    left: 40px;
+}
+#code3 {
+    position: relative;
+    left: 80px;
+}
+#code4 {
+    position: relative;
+    left: 120px;
+}
+#submitCode{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    font-size: 40px;
+}
+#codeButton{
+    width: 288.75px;
+    height: 63.75px;
+}
+#codeText{
+    position: absolute;
+    top: -35px;
+    left: 100px;
+    user-select: none;
+}
+#wrong_code{
+    position: absolute;
+    font-size: 50px;
+    color: red;
+    left: 900px;
+    top: 605px;
+    display: none;
+}
